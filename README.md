@@ -14,7 +14,7 @@ Envrionment for working with GCP VCFs
 
 1. Add the service account to the project _Owner_ or _Viewer_ role
 
-1. In `.vscode/launch.json` fill in the `AWS_CLIENT_ID` and `AWS_CLIENT_SECRET` for the VCF user. Be sure to escape the JSON. Avoid using online tools to do this due to the sensitive nature of what you are escaping. The resulting `env` map will resemble:
+1. In `.vscode/launch.json` fill in the `CREDENTIAL_KEY`, `CREDENTIAL_ID` and `PROJECT_ID` for the service account. Be sure to escape the JSON. Avoid using online tools to do this due to the sensitive nature of what you are escaping. The resulting `env` map will resemble:
     ```json
     {
         "CREDENTIAL_ID"  : "your-service-account@your-project.iam.gserviceaccount.com",
