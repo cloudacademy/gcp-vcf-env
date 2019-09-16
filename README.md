@@ -37,3 +37,4 @@ Envrionment for working with GCP VCFs
 
 - [Google APIs Explorer](https://developers.google.com/apis-explorer)
 - [OAuth2 Scopes for Google](https://developers.google.com/identity/protocols/googlescopes)
+- [GCP Python Docs Samples](https://github.com/GoogleCloudPlatform/python-docs-samples)
