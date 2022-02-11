@@ -37,6 +37,10 @@ Envrionment for working with GCP VCFs
 
 1. Develop and debug functions using the `Current File (Integrated Terminal)` configuration (press F5 with the file open)
 
+    If you see any errors with importing modules, ensure VS Code is configured to use the venv Python by checking the lower-left status bar in VS Code:
+
+    ![venv Python in VS Code status bar](https://user-images.githubusercontent.com/3911650/153683320-b656c3c0-b268-4927-a186-81a301517d49.png)
+
 ## Update Dependencies
 
 1. Run `init.sh` (Mac/Linux)/`init.ps1` (Windows) to set up the virtual environment again. (only the `venv/` directory is impacted by this operation)
