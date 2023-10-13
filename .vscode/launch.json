@@ -12,9 +12,24 @@
             "console": "integratedTerminal",
             "env": {
                 // VCF account
-                "CREDENTIAL_KEY" : "INSERT_CREDENTIAL_KEY",
-                "CREDENTIAL_ID"  : "INSERT_CREDENTIAL_ID",
-                "PROJECT_ID"     : "INSERT_PROJECT_ID"
+                "CREDENTIAL_KEY": "INSERT_CREDENTIAL_KEY",
+                "CREDENTIAL_ID": "INSERT_CREDENTIAL_ID",
+                "PROJECT_ID": "INSERT_PROJECT_ID"
+            }
+        },
+        {
+            "name": "Docker: Python - General",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "general"
             }
         }
     ]
