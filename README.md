@@ -45,6 +45,39 @@ Envrionment for working with GCP VCFs
 
 1. Run `init.sh` (Mac/Linux)/`init.ps1` (Windows) to set up the virtual environment again. (only the `venv/` directory is impacted by this operation)
 
+## Authentication options
+
+The launch.json encoding of credential key, credential ID, and project ID for authentication works well for debugging the current file.
+To streamline the authentication process when debugging using containers (VS Code Docker debug profile), `gcloud` application default credentials and .config.env files are used.
+<ins>.config.env is higher precedence</ins> and gcloud credentials are used as a fallback.
+
+Refer to the [`google.auth` documentation](https://googleapis.dev/python/google-auth/latest/reference/google.auth.html#google.auth.default).
+Note that `CREDENTIAL_KEY` defined in `.config.env` is used to populate a file that is pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable.
+        # gcloud auth application-default login
+
+### gcloud CLI credentials
+
+The gcloud credentials can be used by the google.auth Python library to authenticate with Google Cloud.
+The gcloud CLI must be authenticated with <ins>application default</ins> credentials (`gcloud auth application-default login`) and a default project may be set (`gcloud config set project ...`).
+The default project can be retrieved from .config.env.
+If the project is not defined in .config.env, the default project must be defined in the gcloud CLI (`gcloud config set project ...`).
+
+If gcloud is authenticated, and a default project is set and displayed by `az config get project`, a .config.env file can be omitted.
+
+### .config.env file
+
+The .config.env file is similar to the environment variables defined in the launch.json file but is a flat file of variable declarations.
+The contents of .config.env resemble:
+    
+```sh
+CREDENTIAL_ID="your-service-account@your-project.iam.gserviceaccount.com",
+CREDENTIAL_KEY="{\"type\":\"service_account\",\"project_id\":\"your-project\",\"private_key_id\":\"...}",
+PROJECT_ID="your-project"
+```
+
+As mentioned, gcloud credentials may be used in lieu of `CREDENTIAL_ID`, and `CREDENTIAL_KEY`.
+If the PROJECT_ID is set in .config.env it overrides the gcloud configured project.
+
 ## References
 
 - [Google APIs Explorer](https://developers.google.com/apis-explorer)
