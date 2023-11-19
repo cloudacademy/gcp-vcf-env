@@ -18,6 +18,14 @@
 			"dependsOn": [
 				"docker-build"
 			],
+			"dockerRun": {
+				"volumes": [
+					{
+						"localPath": "${userHome}/.config/gcloud",
+						"containerPath": "/home/appuser/.config/gcloud"
+					}
+				],
+			},
 			"python": {
 				"file": "src/entry.py"
 			}
