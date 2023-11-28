@@ -70,8 +70,8 @@ The .config.env file is similar to the environment variables defined in the laun
 The contents of .config.env resemble:
     
 ```sh
-CREDENTIAL_ID="your-service-account@your-project.iam.gserviceaccount.com",
-CREDENTIAL_KEY="{\"type\":\"service_account\",\"project_id\":\"your-project\",\"private_key_id\":\"...}",
+CREDENTIAL_ID="your-service-account@your-project.iam.gserviceaccount.com"
+CREDENTIAL_KEY="{\"type\":\"service_account\",\"project_id\":\"your-project\",\"private_key_id\":\"...}"
 PROJECT_ID="your-project"
 ```
 
