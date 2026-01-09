@@ -4,7 +4,7 @@ Envrionment for working with GCP VCFs
 
 ## Getting started
 
-1. Ensure Python 3.6+ is installed on your system
+1. Ensure Python 3.13 is installed on your system
 
 1. Create a GCP project
 

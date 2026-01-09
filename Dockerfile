@@ -1,5 +1,5 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.9-slim
+FROM python:3.13-slim
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install dev dependencies
-RUN python -m pip install --upgrade python-dotenv==1.0.0
+RUN python -m pip install --upgrade python-dotenv==1.0.0 jmespath==0.10.0
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
